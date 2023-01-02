@@ -14,10 +14,11 @@
 
 1. 원본 저장소 Fork 하기
 2. Fork한 저장소를 로컬 저장소에 복사하기
-3. main 브랜치에서 폴더구조 규칙에 맞게 파일을 생성해서 문제 풀기
-4. 커밋 규칙에 따라 소스코드를 내 원격 저장소에 업로드하기
-5. 내 원격 저장소에 있는 것을 원본 저장소에 PR 하기
-6. 다른 사람 PR을 보고 코드 리뷰하기
+3. 내 닉네임으로 된 브랜치를 생성한다.
+4. 폴더구조 규칙에 맞게 파일을 생성해서 문제 풀기
+5. 커밋 규칙에 따라 소스코드를 내 원격 저장소에 업로드하기
+6. 내 원격 저장소에 있는 것을 원본 저장소에 PR 하기
+7. 다른 사람 PR을 보고 코드 리뷰하기
 
 ### 1. 원본 저장소 Fork하기
 
@@ -42,7 +43,55 @@ $ git clone https://github.com/Algorithm-Squad/Algorithm.git .
 $ git clone git@github.com:Algorithm-Squad/Algorithm.git .
 ```
 
-### 3. 폴더 구조 / 파일 생성
+3. 원본 원격 저장소(`upstream`) 등록하기
+   - `upstream` 의 최신 작업 내역을 빠르게 `pull` 할 수 있게 연결하는 작업
+
+```bash
+git remote add upstream [원본 원격 저장소 URL]
+
+// 예시
+$git remote add upstream git@github.com:Algorithm-Squad/Algorithm.git
+```
+
+4. 3번까지 등록하고 나면 원격 저장소를 조회했을 때, `origin(Fork)`과 `upstream(원본)` 이 존재한다.
+
+```bash
+$git remote -v
+origin [fork 떠온 저장소 경로] (fetch)
+origin [fork 떠온 저장소 경로] (pull)
+upstream git@github.com:Algorithm-Squad/Algorithm.git (fetch)
+upstream git@github.com:Algorithm-Squad/Algorithm.git (pull)
+```
+
+5. `git fetch —all` 을 통해 저장소가 가진 commit 내역을 가져온다.
+
+### 3. 브랜치 생성하기
+
+- 내 이름에 맞는 브랜치를 생성하고, 해당 브랜치로 이동해서 문제를 푼다.
+
+```bash
+// 브랜치 생성
+$git branch [생성할 브랜치명]
+
+// 브랜치 이동
+$git checkout [이동할 브랜치명]
+
+// 브랜치 생성 + 이동
+$git switch -c [생성 + 이동할 브랜치명] 혹은 $git checkout -b [생성 + 이동할 브랜치명]
+```
+
+- push는 Fork 해온 `origin` 원격 저장소의 브랜치에 push한다.
+
+```bash
+git push [Fork한 원격 저장소명] [브랜치명]
+
+// 예시
+$git push origin ethan
+```
+
+- 이후 커밋 히스토리에서 원본 원격 저장소에 변경사항이 있다면 Fork한 내 로컬 저장소에도 똑같이 반영시켜야한다.
+
+### 4. 폴더 구조 / 파일 생성
 
 - 폴더 구조는 `해당 주차/닉네임/문제 출처(플랫폼)/문제 이름` 형식으로 작업한다.
 - `src` 폴더의 하위 구조로 작성한다.
@@ -55,7 +104,7 @@ $ git clone git@github.com:Algorithm-Squad/Algorithm.git .
 src/weekly1/ethan/leetCode/136_SingleNumber.js
 ```
 
-### 4. 커밋 규칙 및 소스 코드 업로드
+### 5. 커밋 규칙 및 소스 코드 업로드
 
 - Commit 메세지 작성에 규칙이 있으며, 이에 맞게 작성해야한다.
   - commit 메세지 : `문제 출처(플랫폼)] 문제이름/ 난이도`
@@ -74,18 +123,18 @@ $ git commit -m"[LTC]136. Single Number / easy
 https://leetcode.com/problems/single-number/"
 ```
 
-### 5. PR 양식 / PR 생성하기
+### 6. PR 양식 / PR 생성하기
 
-#### 5-1. PR 생성하기
+#### 6-1. PR 생성하기
 
 1. 저장소의 카테고리에 `Pull Requests` 를 들어가서 `New pull request` 를 선택한다.
 2. Fork 한 저장소에서 원본 저장소로 PR을 보낼 때, 충돌 관련 내용을 체크하고 `Create pull request`버튼을 누른다.
 3. PR 양식에 맞추어 PR 제목과 내용, 그리고 우측에 있는 라벨도 등록한 후 `Create pull request` 를 진행한다.
-4. `head repository : fork한 내 저장소` + `compare : main`
+4. `head repository : fork한 내 저장소` + `compare : 내 닉네임으로 된 branch`
 
-→ `base repository: 원본 저장소` + `base : 내 닉네임으로 된 branch`
+→ `base repository: 원본 저장소` + `base : main`
 
-#### 5-2. PR 양식
+#### 6-2. PR 양식
 
 ##### PR 제목
 
