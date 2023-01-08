@@ -1,8 +1,8 @@
 /**
  * 169. Majority Element - easy
  * int majorityCount = nums.length/2 보다 많은 수를 찾아라 !
- * 시간복잡도 : [Runtime73 ms] O(n) ..?
- * 공간복잡도 : [Memory43.5 MB] O(n)
+ * 시간복잡도 : O(n) [Runtime 73 ms] [Beats 81.85%]
+ * 공간복잡도 : O(n) [Memory 43.5 MB] [Beats 76.99%]
  *
  * @param {number[]} nums
  * @return {number}
