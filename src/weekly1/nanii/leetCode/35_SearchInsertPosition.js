@@ -1,5 +1,9 @@
 /**
  * 35. Search insert position
+ *
+ * 시간복잡도 : O(n) ..? [Runtime 54 ms] [Beats 98.2%]
+ * 공간복잡도 : [Memory 42.1 MB] [Beats 66.40%]
+ *
  * @param {number[]} nums
  * @param {number} target
  * @return {number}
@@ -31,14 +35,7 @@ var searchInsert = function(nums, target) {
  *
  * 고민과정 : 이진탐색을 해야할지...머리가 생각하는대로 빨리 짜버릴까 많이 고민했습니다
  * 이렇게 정렬된 배열은 반으로 쪼개서 찾아가야 시간복잡도가 좋다고 하니
- * 반으로 쪼개서.. 범위를 줄이고 줄이고 줄이고 줄이기 위해 while문을 사용해야겠다~..싶었고
- * 코드 다 짜고 막판에 return을 마지막 중괄호 } 앞이 아닌 곳에 위치시켰더니
- * 계속 wrong answer 오류가 발생해서 애먹었습니다
- * 요즘 갑자기 return 위치 잡는 게 자꾸 헷갈립니다
- *
- * 시간복잡도 : O(logn)
- * 공간복잡도 : 
-*/
+ * 반으로 쪼개서.. 범위를 줄이고 줄이고 줄이고 줄이기 위해 while문을 사용
 
 var searchInsert2 = function(nums, target) {
   let result = 0;
@@ -54,5 +51,6 @@ var searchInsert2 = function(nums, target) {
   }
   return result;
 };
+ */
 
 console.log(searchInsert(nums, target));
