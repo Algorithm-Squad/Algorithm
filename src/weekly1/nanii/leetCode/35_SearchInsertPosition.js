@@ -1,7 +1,7 @@
 /**
  * 35. Search insert position
  *
- * 시간복잡도 : O(n) ..? [Runtime 54 ms] [Beats 98.2%]
+ * 시간복잡도 : O(logn) [Runtime 54 ms] [Beats 98.2%]
  * 공간복잡도 : [Memory 42.1 MB] [Beats 66.40%]
  *
  * @param {number[]} nums
