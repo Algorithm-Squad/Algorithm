@@ -15,12 +15,13 @@
  * @param {*} numbers
  * @returns {*} string
  */
- function solution(numbers) {
+function solution(numbers) {
   const answer = numbers.map(String)
     .sort((a, b) => (b + a) - (a + b))
     .join('');
   return parseInt(answer) === 0 ? '0' : answer;
 }
+
 
 /**
  * 시간초과
@@ -37,7 +38,7 @@ function solution(numbers) {
   return String(Math.max(...set));
 }
 
- * 인덱스를 0 ~ n 까지 넘어갈 수가 없네..
+ * 인덱스를 0 ~ n 까지 넘어갈 수가 없네.. (아! n이 최대 4이구나.....)
 function solution(numbers) {
   let answer = '';
   let strArr = numbers.map(String);
@@ -57,5 +58,7 @@ function solution(numbers) {
 
 // const numbers = [6, 10, 2];
 // const numbers = [3, 30, 34, 5, 9];
-const numbers = [0,0,0,0]; // 테스트케이스11번
-console.log(solution(numbers));
+// const numbers = [0,0,0,0]; // 0
+// console.log(solution(numbers));
+
+console.log(Number('330')+'303');
