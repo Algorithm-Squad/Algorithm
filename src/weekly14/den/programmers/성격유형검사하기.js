@@ -27,18 +27,19 @@ function solution(survey, choices) {
     const secondType = surveyInEach[index + (index + 1)];
     const MEDIAN = 4;
 
-    if(choice < 4) scoreSheet[firstType] += MEDIAN - choice;
-    if(choice === 4){
+    if(choice < MEDIAN) scoreSheet[firstType] += MEDIAN - choice;
+    if(choice === MEDIAN){
       scoreSheet[firstType] += 1;
       scoreSheet[secondType] += 1;
     }
-    if(choice > 4) scoreSheet[secondType] += choice - MEDIAN;
+    if(choice > MEDIAN) scoreSheet[secondType] += choice - MEDIAN;
   })
   
   const types = Object.keys(scoreSheet);
 
   return types.map((type, index) => {
-    if(index % 2 === 1) return;
+    const isOdd = index % 2 === 1;
+    if(isOdd) return;
     const firstTypeScore = scoreSheet[type];
     const secondTypeScore = scoreSheet[types[index + 1]];
     if(firstTypeScore > secondTypeScore) return type;
