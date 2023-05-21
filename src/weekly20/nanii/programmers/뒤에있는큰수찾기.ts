@@ -7,7 +7,6 @@
 
 function solution(numbers: number[]):number[] {
   const answer = [];
-  const stack:number[] = [];
   const indexStack:number[] = [];
 
   for(let i = 0; i < numbers.length; i++) {
