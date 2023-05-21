@@ -12,12 +12,10 @@ function solution(numbers: number[]):number[] {
 
   for(let i = 0; i < numbers.length; i++) {
     while(indexStack && numbers[indexStack[indexStack.length - 1]] < numbers[i]) {
-      stack.push(numbers[i]);
       answer[indexStack.pop()] = numbers[i];
-      stack.pop();
     }
     indexStack.push(i);
-    if(!stack.length) answer.push(-1);
+    answer.push(-1);
   }
   return answer;
 }
