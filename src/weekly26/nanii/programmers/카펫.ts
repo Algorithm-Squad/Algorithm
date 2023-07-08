@@ -8,12 +8,12 @@
 function solution(brown: number, yellow:number): number[] {
   const answer = [];
   const total = brown + yellow;
-  for(let width = 3; width < total; width ++) {
-    const height = total / width;
-    if(height % 1) continue;
-    const yellowCount = (width - 2) * (height - 2);
+  for(let height = 3; height < total; height ++) {
+    const width = total / height;
+    if(width % 1) continue;
+    const yellowCount = (height - 2) * (width - 2);
     if(yellowCount === yellow) {
-      answer.push(height, width);
+      answer.push(width, height);
       break;
     }
   }
