@@ -1,7 +1,7 @@
 /**
  * 문제출처: https://leetcode.com/problems/generate-parentheses/
  * 시작시간: 10:55
- * 종료시간:
+ * 종료시간: 11:55
  * 
  * 1. 문제 설명
  * - n개의 괄호로 만들 수 있는 모든 조합을 반환하라.
