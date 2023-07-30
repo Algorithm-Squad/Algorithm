@@ -16,3 +16,16 @@ function longestCommonSubsequence(text1: string, text2: string): number {
   }
   return dp[col][row];
 };
+
+/*
+text1 = "abcde"
+text2 = "ace"
+dp = [
+  [0,  0,  0,  0],
+  [0, (1), 1,  1],
+  [0,  1,  1,  1],
+  [0,  1, (2), 2],
+  [0,  1,  2,  2],
+  [0,  1,  2, (3)]
+]
+ */
