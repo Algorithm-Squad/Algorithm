@@ -1,5 +1,6 @@
 /**
  * 전화번호 목록 / Lv.2
+ * https://school.programmers.co.kr/learn/courses/30/lessons/42577
  * @param phone_book 전화번호가 담긴 배열
  * @returns 다른 번호의 접두어로 사용되는 경우가 있으면 false, 없으면 true
  */
