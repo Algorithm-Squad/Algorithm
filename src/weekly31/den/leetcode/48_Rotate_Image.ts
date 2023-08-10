@@ -2,6 +2,7 @@
  * 문제출처: https://leetcode.com/problems/rotate-image/
  * 시작시간: 13:45
  * 종료시간: 14:30
+ * 결과: 성공
  */
 
 function rotate(matrix: number[][]): void {
