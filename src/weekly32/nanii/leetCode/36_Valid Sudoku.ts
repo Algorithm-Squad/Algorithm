@@ -7,8 +7,6 @@
  * @param board
  */
 function isValidSudoku(board: string[][]): boolean {
-  const length = board.length;
-
   // 배열을 순회하면서 숫자에 대한 포지션을 저장
   const map = new Map();
   board.forEach((row, rowIndex) => {
@@ -18,13 +16,12 @@ function isValidSudoku(board: string[][]): boolean {
       }
     })
   });
-
   return checkDuplicate(map);
 };
 
 const checkDuplicate = (map: Map<string, number[][]>) => {
   // row, col, 3*3 중복 검사
-  for (const [key, value] of map) {
+  for (const [_, value] of map) {
     const row = new Set();
     const col = new Set();
     const board = new Set();
