@@ -11,10 +11,11 @@ function jump(nums: number[]): number {
     cur = 0,
     max = 0;
 
+  //[2,3,1,1,4]
   for (let i = 0; i < n - 1; i++) {
-    const j = nums[i];
-    max = Math.max(max, i + j); // 현재위치에서 점프할 수 있는 최대 거리를 갱신함
-    if (i === cur) { // 현재위치에서 점프하여 이동할 때
+    const j = nums[i]; // 0일땐 2로 이동가능
+    max = Math.max(max, i + j); // max = 2
+    if (i === cur) { // 현재위치에서
       steps++; // 점프 횟수를 증가시키고
       cur = max; // 현재위치를 이동할 수 있는 최대 거리로 갱신
     }
