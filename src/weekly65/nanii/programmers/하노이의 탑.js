@@ -14,9 +14,9 @@ function solution(n) {
   const hanoi = (n, a, b, c) => {
     if (n === 0) return;
 
-    hanoi(n - 1, a, c, b); // a->c->b
+    hanoi(n - 1, a, c, b); // a->c
     answer.push([a, b]);
-    hanoi(n - 1, c, b, a); // c->b->a
+    hanoi(n - 1, c, b, a); // c->b
   };
 
   hanoi(n, 1, 3, 2); // 1->2->3
